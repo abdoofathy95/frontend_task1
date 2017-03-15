@@ -1,0 +1,93 @@
+.banner{
+  height: 100vh;
+  background-image: url("../images/homeImage1.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.banner .content_area{
+  position: relative;
+  top: 50%;
+  margin: 0 auto;
+  transform: translateY(-50%);
+  width: 50%;
+  text-align: center;
+}
+
+.banner .content_area .text h1{
+  font-size: 35pt;
+  color: #2e3839;
+}
+
+.banner .content_area .text p{
+  font-size: 16pt;
+  color: white;
+}
+body{
+  background-color: #fbfbfb;
+}
+.trending{
+  background-color: #fbfbfb;
+  margin: 10px 120px 120px 100px;
+}
+
+.trending::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.trending .left_section{
+  float: left;
+}
+
+.trending .right_section{
+  position: relative;
+  width: 25%;
+  float: right;
+}
+
+.trending .left_section h4{
+  font-weight: lighter;
+  font-size: 20pt;
+}
+
+.trending .left_section .centered_div{
+  position: relative;
+  text-align: center;
+  top: 80px;
+}
+.trending .left_section .item{
+  display: inline-block;
+  margin: 0px 10px 0 0;
+}
+
+.trending .right_section h4{
+  font-family: serif;
+  font-weight: bold;
+  font-size: 12pt;
+  color: #313131;
+}
+
+.trending .right_section img{
+  width: 100%;
+  height: 173px;
+  margin-top: 10px;
+}
+
+.top_authors{
+  background-color: #f2f2f2;
+}
+
+.top_authors .content{
+  padding: 35px 100px 0px 100px;
+}
+
+.top_authors h4{
+  font-size: 20pt;
+  font-weight: normal;
+}
+
+.top_authors .slider{
+
+}
