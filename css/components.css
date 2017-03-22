@@ -86,7 +86,7 @@ body {
   cursor: pointer;
 }
 input{
-  border-width:0px;
+  background:transparent;
   border:none;
 }
 
