@@ -1,0 +1,58 @@
+.slider {
+	overflow: hidden;
+	height: 100vh;
+	position: relative;
+}
+
+.container {
+	height: 100%;
+	position: relative;
+	left: 0;
+	-webkit-transition: left 1s;
+	transition: left 1s;
+}
+
+.slide {
+	height: 100%;
+	background-size: cover;
+	background-position: 50% 50%;
+	float: left;
+}
+
+.arrow {
+	position: absolute;
+	font-size: 30px;
+	line-height: 10px;
+	border: none;
+}
+
+.arrow--default-style {
+	background-color: white;
+}
+
+.arrow--bottom-style {
+	background-color: transparent;
+}
+
+.arrow--bottom {
+	bottom: 5%;
+}
+
+.arrow--center {
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.arrow--left {
+	left: 5%;
+}
+
+.arrow--right {
+	right: 5%;
+}
+
+.arrow--round {
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+}
