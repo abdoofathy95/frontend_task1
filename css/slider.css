@@ -26,21 +26,16 @@
 	border: none;
 }
 
+.arrow:hover {
+	cursor: pointer;
+}
+
 .arrow--default-style {
 	background-color: white;
 }
 
 .arrow--bottom-style {
 	background-color: transparent;
-}
-
-.arrow--bottom {
-	bottom: 5%;
-}
-
-.arrow--center {
-	top: 50%;
-	transform: translateY(-50%);
 }
 
 .arrow--left {
@@ -55,4 +50,65 @@
 	width: 35px;
 	height: 35px;
 	border-radius: 50%;
+}
+
+.navigation-dots {
+	display: inline-block;
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
+
+.navigation-dots > li {
+	float: left;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.navigation-dot {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	border: 1px solid transparent;
+	display: inline-block;
+}
+
+.navigation-dot:hover {
+	cursor: pointer;
+}
+
+.navigation-dot--default {
+	background-color: lightgray;
+}
+
+.navigation-dot--default-selected {
+	background-color: #5a5a5a;
+}
+
+.navigation-dot--hollow {
+	background-color: transparent;
+	border-color: white;
+}
+
+.navigation-dot--hollow-selected {
+	background-color: white;
+}
+
+.navigation {
+	position: absolute;
+/*	background-color: red;*/
+}
+
+.vertical-center {
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.horizontal-center {
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.vertical-bottom {
+	bottom: 5%;
 }

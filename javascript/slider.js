@@ -16,7 +16,7 @@ $(document).ready(function() {
 		let visibleSlides = slider.attr('data-visible-slides');
 		let leftMultiplier = 100;
 		if (visibleSlides != null) {
-			visibleSlides = Math.min(parseInt(visibleSlides), slideCount);
+			visibleSlides = Math.min(Math.max(parseInt(visibleSlides), 1), slideCount);
 			container.css('width', `${(100 * slideCount/visibleSlides)}%`);
 			leftMultiplier = 100/visibleSlides;
 		} else {
@@ -49,18 +49,18 @@ $(document).ready(function() {
 				}
 				
 				if (style == 'default') {
-					previousButton.addClass('arrow--center');
+					previousButton.addClass('vertical-center');
 					previousButton.addClass('arrow--round');
 					previousButton.addClass('arrow--default-style');
 					
-					nextButton.addClass('arrow--center');
+					nextButton.addClass('vertical-center');
 					nextButton.addClass('arrow--round');
 					nextButton.addClass('arrow--default-style');
 				} else if (style == 'bottom') {
-					previousButton.addClass('arrow--bottom');
+					previousButton.addClass('vertical-bottom');
 					previousButton.addClass('arrow--bottom-style');
 					
-					nextButton.addClass('arrow--bottom');
+					nextButton.addClass('vertical-bottom');
 					nextButton.addClass('arrow--bottom-style');
 				}
 				
@@ -75,6 +75,45 @@ $(document).ready(function() {
 			slideShrink = parseInt(slideShrink);
 
 			slides.css('transform', `scale(${1 - slideShrink/100})`);
+		}
+		
+		let dots = slider.attr('data-dots');
+		if (dots == null) {
+			dots = 'false';
+		}
+		
+		let dotClass = 'navigation-dot--default';
+		let dotSelectedClass = 'navigation-dot--default-selected';
+		if (dots == 'true') {
+			let navigation = $(`<div class="navigation horizontal-center vertical-bottom"></div>`);
+			let navigationDots = $(`<ul class="navigation-dots"></ul>`);
+			
+			let dotCount = slideCount;
+			if (visibleSlides > 1) {
+				dotCount = (slideCount - visibleSlides) + 1;
+			}
+			
+			let dotStyle = slider.attr('data-dots-style');
+			if (dotStyle == 'hollow') {
+				dotClass = 'navigation-dot--hollow';
+				dotSelectedClass = 'navigation-dot--hollow-selected';
+			}
+			
+			for (let i = 0; i < dotCount; i++) {
+				let listItem = $(`<li></li>`);
+				let navigationDot = $(`<div class="navigation-dot" data-navigation-dot-index="${i}"></div>`);
+				if (i == 0) {
+					navigationDot.addClass(dotSelectedClass);
+				} else {
+					navigationDot.addClass(dotClass);
+				}
+				
+				listItem.append(navigationDot);
+				navigationDots.append(listItem);
+			}
+			
+			navigation.append(navigationDots);
+			slider.append(navigation);
 		}
 
 		let previous = slider.find('#previous');
@@ -98,28 +137,52 @@ $(document).ready(function() {
 			nextSlide();
 		});
 		
+		let dot = slider.find('.navigation-dot');
+		dot.click(function() {
+			let i = $(this).attr('data-navigation-dot-index');
+			
+			animateSlide(index, i, leftMultiplier);
+		});
+		
 		function previousSlide(){
+			let oldIndex = index;
 			index = (index - 1);
 
 			if (index < 0) {
 				index = slideCount - ((visibleSlides == 0) ? 1 : visibleSlides);
 			}
 
-			animateSlide(index, leftMultiplier);
+			animateSlide(oldIndex, index, leftMultiplier);
 		};
 		
 		function nextSlide() {
+			let oldIndex = index;
 			index = (index + 1);
 
 			if (index + visibleSlides >= slideCount + 1) {
 				index = 0;
 			}
 
-			animateSlide(index, leftMultiplier);
+			animateSlide(oldIndex, index, leftMultiplier);
+		};
+		
+		function deselectDot(index) {
+			let navigationDot = $('[data-navigation-dot-index]').get(index);
+			$(navigationDot).removeClass(dotSelectedClass);
+			$(navigationDot).addClass(dotClass);
+		};
+		
+		function selectDot(index) {
+			let navigationDot = $('[data-navigation-dot-index]').get(index);
+			$(navigationDot).removeClass(dotClass);
+			$(navigationDot).addClass(dotSelectedClass);
 		};
 
-		function animateSlide(index, multiplier) {
-			left = -(index * multiplier) + '%';
+		function animateSlide(oldIndex, newIndex, multiplier) {
+			index = newIndex;
+			deselectDot(oldIndex);
+			selectDot(newIndex);
+			left = -(newIndex * multiplier) + '%';
 			container.css('left', left);
 		};
 	};
