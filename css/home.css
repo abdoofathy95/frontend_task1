@@ -91,7 +91,7 @@ body{
 .top_authors .slider{
   height: 500px;
   width: 90%;
-  margin-bottom: 50px;
+  padding-bottom: 50px;
 }
 .trending .slider{
   height: 400px;
