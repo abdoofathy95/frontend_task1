@@ -363,3 +363,126 @@ input {
 	background-color: #d6d6d6;
 	cursor: pointer;
 }
+
+.circular {
+	border-radius: 50%;
+}
+
+.background-image {
+	background-size: cover;
+	background-position: 50% 50%;
+}
+
+.border-top {
+	border-top: 1px solid darkgray;
+}
+
+.border-bottom {
+	border-bottom: 1px solid darkgray;
+}
+
+.body-content {
+	margin-top: 20px;
+}
+
+.article-header {
+	height: 50vw;
+	width: 100%;
+	background-size: cover;
+	background-position: 50% 50%;
+}
+
+.article-header-content {
+	position: relative;
+	width: 75%;
+}
+
+.article-topic {
+	color: rgb(202, 173, 3);
+	font-size: 1vw;
+}
+
+.article-title {
+	color: white;
+	margin: 0;
+	font-size: 6vw;
+}
+
+.comments-content {
+	background-color: rgb(242, 243, 244);
+}
+
+.comments {
+	width: 70vh;
+	max-width: 90vh;
+	transition: width 1s;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+@media screen and (max-width: 700px) {
+	.comments {
+		width: 100%;
+	}
+}
+
+.comment {
+	position: relative;
+}
+
+.comment::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.comment-image-view {
+	position: absolute;
+	width: 10%;
+	height: 100%;
+/*	background-color: blue;*/
+}
+
+.comment-image {
+	width: 50px;
+	height: 50px;
+}
+
+.comment-content {
+	width: 85%;
+	height: 100%;
+}
+
+.comment-content-header h4 {
+	margin-right: 10px;
+}
+
+.comment-content-header p {
+	color: gray;
+	font-size: 10px;
+}
+
+.comment-input {
+	outline: none;
+	width: 90%;
+	height: 30px;
+	font-size: 14px;
+}
+
+.comment::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+@media screen and (max-width: 570px) {
+	.comment-image-view {
+		width: 55px;
+		height: 100%;
+		background-color: blue;
+	}
+	
+	.comment-content {
+		width: calc(100% - 85px);
+	}
+}
