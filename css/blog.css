@@ -1,8 +1,10 @@
+/*
 @font-face
 {
     font-family: 'Lato';
     src: url('../Lato/Lato-Regular.ttf');
 }
+*/
 
 a, p, h3, div{
   font-family: 'Lato', sans-serif;
@@ -79,9 +81,11 @@ a, p, h3, div{
     position: relative;
 }
 
+/*
 .float_left {
     float: left;
 }
+*/
 
 .dropdown_l {
     position: relative;
@@ -152,6 +156,7 @@ a, p, h3, div{
     color: red;
 }
 
+/*
 .tags_container {
     margin-top: 50px;
     padding: 20px;
@@ -196,6 +201,7 @@ a, p, h3, div{
     background-color: blue;
     cursor: pointer;
 }
+*/
 
 .slider_container{
   margin-top: 10px;
