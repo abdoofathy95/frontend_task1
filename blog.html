@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./css/components.css">
     <link rel="stylesheet" href="./css/blog.css">
     <link rel="stylesheet" href="./lib/font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="./css/slider.css">
     <title>Blog</title>
 </head>
 
@@ -37,7 +38,31 @@
         </div>
     </div>
 
-    <table width=100% height=100%>
+    <div class="slider_container">
+        <div class="slider" data-visible-slides="0" data-slide-shrink="0" data-arrows="true" data-dots="false" data-dots-style="hollow" data-style="default" data-arrow-color="black" data-autoplay="false">
+            <div class="container">
+                <div class="slide" style="background-image: url(./images/blogImage1.png)">
+                    <table class="slider_input_container">
+                        <tr valign="middle">
+                            <td class="slider_input_container">
+                                <p class="category">POLITICS</p>
+                                <p class="title">Cameron Set to Return With U.K. Majority as SNP Sweeps Scotland</p>
+                                <a class="blue_button red_background" type="button" name="button">READ MORE</a>
+                            </td>
+                    </table>
+                </div>
+                <div class="slide" style="background-image: url(./images/homeImage1.png);"></div>
+                <div class="slide" style="background-image: url(./images/articlePageImage.png)"></div>
+                <div class="slide" style="background-image: url(./images/homeImage2.png)"></div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <table class="blog_body_style">
         <tr valign="top">
             <td class="left_section">
                 <div class="content">
@@ -68,8 +93,8 @@
 
 
                     <div class="tags_container">
-                            <p class="tags_text_format">TAGS</p>
-                            <p class="tags_underline_format">____</p>
+                        <p class="tags_text_format">TAGS</p>
+                        <p class="tags_underline_format">____</p>
                         <div class="clr">
                             <div class="rounded_corner_button float_left">
                                 MARKETS
@@ -138,10 +163,8 @@
 
             </td>
             <td class="right_section">
-                <div class="items--list">
+                <div>
                     <div class="clr">
-
-
                         <div class="item">
                             <img src="./images/home_and_blogImage2.png" alt="">
                             <div class="content">
@@ -252,8 +275,35 @@
         </tr>
     </table>
 
+
+    <div class="footer">
+        <div class="content">
+            <div class="head">
+                <div class="logo">
+                    <div class="image"></div>
+                    <h1>MET</h1>
+                </div>
+                <p>This is Photoshop's version of Lorem Ipsum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                    anim id est laborum.</p>
+            </div>
+            <div class="links">
+                <ul>
+                    <li><a href="#">NEWS</a></li>
+                    <li><a href="#">GALLERY</a></li>
+                    <li><a href="#">BLOG</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">CONTACTS</a></li>
+                </ul>
+
+                <p>&copy; 2015 MET.All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+
     <script src="javascript/jquery.js"></script>
     <script src="javascript/blog.js"></script>
+    <script src="javascript/slider.js"></script>
 
 </body>
 
