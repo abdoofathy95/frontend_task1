@@ -112,3 +112,9 @@
 .vertical-bottom {
 	bottom: 5%;
 }
+.bottom-bar{
+	border: 1px solid white;
+	width: 90%;
+	position: relative;
+	bottom: 15%;
+}

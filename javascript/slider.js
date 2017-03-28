@@ -28,42 +28,45 @@ $(document).ready(function() {
 		let hasArrows = slider.attr('data-arrows');
 		if (hasArrows != null) {
 			if (hasArrows == "true") {
-				
+
 				let previousButton = $(`<button class="arrow" id="previous"><i class="fa fa-angle-left"></i></button>`);
-				
+
 				let nextButton = $(`<button class="arrow" id="next"><i class="fa fa-angle-right"></i></button>`);
-				
+
 				previousButton.addClass('arrow--left');
 				nextButton.addClass('arrow--right');
-				
+
 				let arrowColor = slider.attr('data-arrow-color');
 				if (arrowColor == null) {
 					arrowColor = 'black';
 				}
 				previousButton.css('color', arrowColor);
 				nextButton.css('color', arrowColor);
-				
+
 				let style = slider.attr('data-style');
 				if (style == null) {
 					style = 'default';
 				}
-				
+
 				if (style == 'default') {
 					previousButton.addClass('vertical-center');
 					previousButton.addClass('arrow--round');
 					previousButton.addClass('arrow--default-style');
-					
+
 					nextButton.addClass('vertical-center');
 					nextButton.addClass('arrow--round');
 					nextButton.addClass('arrow--default-style');
 				} else if (style == 'bottom') {
+					let bar = $('<div class=\"bottom-bar\"></div>');
+					bar.addClass('horizontal-center');
+					slider.append(bar);
 					previousButton.addClass('vertical-bottom');
 					previousButton.addClass('arrow--bottom-style');
-					
+
 					nextButton.addClass('vertical-bottom');
 					nextButton.addClass('arrow--bottom-style');
 				}
-				
+
 				slider.append(previousButton);
 				slider.append(nextButton);
 			}
@@ -76,29 +79,29 @@ $(document).ready(function() {
 
 			slides.css('transform', `scale(${1 - slideShrink/100})`);
 		}
-		
+
 		let dots = slider.attr('data-dots');
 		if (dots == null) {
 			dots = 'false';
 		}
-		
+
 		let dotClass = 'navigation-dot--default';
 		let dotSelectedClass = 'navigation-dot--default-selected';
 		if (dots == 'true') {
 			let navigation = $(`<div class="navigation horizontal-center vertical-bottom"></div>`);
 			let navigationDots = $(`<ul class="navigation-dots"></ul>`);
-			
+
 			let dotCount = slideCount;
 			if (visibleSlides > 1) {
 				dotCount = (slideCount - visibleSlides) + 1;
 			}
-			
+
 			let dotStyle = slider.attr('data-dots-style');
 			if (dotStyle == 'hollow') {
 				dotClass = 'navigation-dot--hollow';
 				dotSelectedClass = 'navigation-dot--hollow-selected';
 			}
-			
+
 			for (let i = 0; i < dotCount; i++) {
 				let listItem = $(`<li></li>`);
 				let navigationDot = $(`<div class="navigation-dot" data-navigation-dot-index="${i}"></div>`);
@@ -107,11 +110,11 @@ $(document).ready(function() {
 				} else {
 					navigationDot.addClass(dotClass);
 				}
-				
+
 				listItem.append(navigationDot);
 				navigationDots.append(listItem);
 			}
-			
+
 			navigation.append(navigationDots);
 			slider.append(navigation);
 		}
@@ -120,7 +123,7 @@ $(document).ready(function() {
 		let next = slider.find('#next');
 		let left;
 		let index = 0;
-		
+
 		let autoplay = slider.attr('data-autoplay');
 		if (autoplay == null) {
 			autoplay == 'false';
@@ -136,14 +139,14 @@ $(document).ready(function() {
 		next.click(function() {
 			nextSlide();
 		});
-		
+
 		let dot = slider.find('.navigation-dot');
 		dot.click(function() {
 			let i = $(this).attr('data-navigation-dot-index');
-			
+
 			animateSlide(index, i, leftMultiplier);
 		});
-		
+
 		function previousSlide(){
 			let oldIndex = index;
 			index = (index - 1);
@@ -154,7 +157,7 @@ $(document).ready(function() {
 
 			animateSlide(oldIndex, index, leftMultiplier);
 		};
-		
+
 		function nextSlide() {
 			let oldIndex = index;
 			index = (index + 1);
@@ -165,15 +168,15 @@ $(document).ready(function() {
 
 			animateSlide(oldIndex, index, leftMultiplier);
 		};
-		
+
 		function deselectDot(index) {
-			let navigationDot = $('[data-navigation-dot-index]').get(index);
+			let navigationDot = slider.find('[data-navigation-dot-index]').get(index);
 			$(navigationDot).removeClass(dotSelectedClass);
 			$(navigationDot).addClass(dotClass);
 		};
-		
+
 		function selectDot(index) {
-			let navigationDot = $('[data-navigation-dot-index]').get(index);
+			let navigationDot = slider.find('[data-navigation-dot-index]').get(index);
 			$(navigationDot).removeClass(dotClass);
 			$(navigationDot).addClass(dotSelectedClass);
 		};
