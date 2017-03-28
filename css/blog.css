@@ -221,7 +221,7 @@ a, p, h3, div{
 }
 
 .slider_container .title{
-  font-size: 50%;
+  font-size: 3vw;
   transform: translateY(-20px);
   color: white;
   font-weight: bold;
