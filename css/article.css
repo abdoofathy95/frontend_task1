@@ -33,24 +33,3 @@ body {
 	width: 25%;
 	float: right;
 }
-
-.right_section * {
-	max-width: 80%;
-	overflow: hidden;
-}
-
-.right_section p {
-	font-size: 1.5vw;
-}
-
-@media screen and (max-width: 700px) {
-	.right_section p {
-		font-size: 2vw;
-	}
-}
-
-@media screen and (min-width: 1000px) {
-	.right_section p {
-		font-size: 15px;
-	}
-}
