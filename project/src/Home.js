@@ -1,4 +1,6 @@
 import React from 'react';
+import axios from 'axios';
+import ArtistList from './ArtistList'
 
 export default class Home extends React.Component {
 
@@ -21,7 +23,7 @@ export default class Home extends React.Component {
     render() {
         return (
             <div>
-                <ArtistList artists=this.state.artists />
+                <ArtistList artists={this.state.artists} />
             </div>
         );
     }

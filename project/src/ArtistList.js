@@ -6,7 +6,7 @@ export default class ArtistList extends React.Component {
         return (
             <div>
                 <ul>
-                    {props.artists.map((artist, i) => <li className='artist_flex' key={i}>
+                    {this.props.artists.map((artist, i) => <li className='artist_flex' key={i}>
                         <tr>
                             <td>
                                 <img src={artist.images[0].url}></img>

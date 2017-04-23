@@ -2,14 +2,15 @@ import React, {Component} from 'react';
 import {BrowserRouter, Route, Link} from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
-import SearchArtists from './components/SearchArtists'
-import SingleArtist from './components/SingleArtist'
+import Home from './Home'
+import SearchArtists from './SearchArtists'
+import SingleArtist from './SingleArtist'
 
-let counter = 0;
+/*let counter = 0;
 setInterval(function(){
   console.log(counter);
   counter++;
-})
+})*/
 
 /*axios.get(API_URL, {params: params}).then(response => {
     this.setState({stateVar: response.data});
