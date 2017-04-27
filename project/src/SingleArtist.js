@@ -10,7 +10,7 @@ export default class SingleArtist extends React.Component {
         }
     }
 
-    compononentDidMount() {
+    componentDidMount() {
         const id = this.props.match.params.id;
         //console.log("compononent Did Mount");
         axios.get(`https://api.spotify.com/v1/artists/${id}`).then(response => {

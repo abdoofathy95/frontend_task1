@@ -1,9 +1,7 @@
 import React from 'react';
 
 export default class SearchArtists extends React.Component {
-    constructor() {
-        super();
-    }
+
     render() {
         return (
             <div>

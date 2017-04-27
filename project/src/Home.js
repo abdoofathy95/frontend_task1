@@ -11,10 +11,10 @@ export default class Home extends React.Component {
         }
     }
 
-    compononentDidMount() {
-        //console.log("compononent Did Mount");
-        axios.get("https://api.spotify.com/v1/search?type=artist&q=a").then(response => {
-            //console.log(response);
+    componentDidMount() {
+        console.log("component Did Mount");
+        axios.get("https://api.spotify.com/v1/search?type=artist&q=amr").then(response => {
+            console.log(response);
             this.setState({artists: response.data.artists.items});
         });
         console.log("get data");
@@ -23,7 +23,7 @@ export default class Home extends React.Component {
     render() {
         return (
             <div>
-                <ArtistList artists={this.state.artists} />
+                <ArtistList artists={this.state.artists}/>
             </div>
         );
     }
