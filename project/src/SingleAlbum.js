@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import TrackList from './TrackList';
 
-export default class SingleArtist extends React.Component {
+export default class SingleAlbum extends React.Component {
 
     constructor(props) {
         super(props);

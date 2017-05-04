@@ -22,3 +22,117 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+.player{
+  position: fixed;
+  background-color: red;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+}
+
+#root {
+    margin: 0;
+    padding: 0;
+    background: #000000;
+    font-family: Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #0a0a0a;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height:100vh;
+}
+.content-wrap {
+    display: flex;
+    -webkit-box-direction: normal;
+}
+div{
+  margin: 0;
+    padding: 0;
+}
+.sidebar {
+    width: 200px;
+    background-color: rgba(0,0,0,.1);
+    background: linear-gradient(0deg,rgba(0,0,0,.1),rgba(0,0,0,.9));
+    padding: 30px;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+img {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+    border-style: none;
+}
+.main-menu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin-top: 50px;
+}
+ul {
+    line-height: 1.6;
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+i {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    font-size: inherit;
+}
+.main-menu__link.active, .main-menu__link:focus, .main-menu__link:hover {
+    color: #fff;
+    opacity: 1;
+}
+
+a {
+    line-height: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+.main-menu__link {
+    padding: 5px;
+    transition: opacity .3s;
+    color: #fff;
+    font-weight: 700;
+    opacity: .6;
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.main-title{
+  margin-top: 50px;
+  margin-left: 50px;
+  color:white;
+}
+.main-content {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    height: 100vh;
+    overflow: scroll;
+    background-color: #191919;
+}
+.sidebar__user{
+    color:white;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
