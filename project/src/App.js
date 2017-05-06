@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-var FontAwesome = require('react-fontawesome');
 import {BrowserRouter, Route, Link} from 'react-router-dom';
 import logo from './logo.svg';
 import './mainToBeChanged.css';
