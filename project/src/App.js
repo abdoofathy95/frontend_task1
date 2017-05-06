@@ -86,9 +86,9 @@ function Navigation(props) {
               <div className="main-content">
                   <Route exact path="/" component={Home}/>
                   <Route path="/artists" component={SearchArtists}/>
-                  <Route path="/artist/:id?" render={(routeProps) => <SingleArtist playTrack={this.playTrack} { ... routeProps }/>}/>
+                  <Route path="/artist/:id?" component={SingleArtist}/>
                   <Route path="/albums" component={SearchAlbums}/>
-                  <Route path="/album/:id?" render={SingleAlbum}/>
+                  <Route path="/album/:id?" component={SingleAlbum}/>
               </div>
             </div>
           </div>
