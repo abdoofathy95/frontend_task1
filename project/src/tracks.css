@@ -1,1 +1,17 @@
+.track-list {
+  width: 100%;
+  border-spacing: 0;
+}
 
+.track-list__item {
+  cursor: pointer;
+  transition: background-color .3s;
+}
+
+.track-list__item:hover {
+  background-color: black;
+}
+
+.track-list__cell {
+  padding: 10px;
+}

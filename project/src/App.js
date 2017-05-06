@@ -51,7 +51,7 @@ export default class App extends Component {
         return (
             <BrowserRouter>
                 <div>
-                    <Navigation/>
+                    <Navigation playTrack={ this.playTrack }/>
                     <Player nextTrack={this.nextTrack} current={this.state.queue[this.state.currentIndex]}/>
                 </div>
             </BrowserRouter>
@@ -87,7 +87,7 @@ function Navigation(props) {
               <div className="main-content">
                   <Route exact path="/" component={Home}/>
                   <Route path="/artists" component={SearchArtists}/>
-                  <Route path="/artist/:id?" render={(routeProps) => <SingleArtist playTrack={this.playTrack} { ... routeProps }/>}/>
+                  <Route path="/artist/:id?" render={(routeProps) => <SingleArtist playTrack={props.playTrack} { ... routeProps }/>}/>
                   <Route path="/albums" component={SearchAlbums}/>
                   <Route path="/album/:id?" render={SingleAlbum}/>
               </div>

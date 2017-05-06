@@ -4,29 +4,34 @@ import TrackList from './TrackList';
 
 export default class SingleArtist extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            artist: {}
-        }
+  constructor(props) {
+    super(props);
+    this.state = {
+      artist: null
     }
+  }
 
-    componentDidMount() {
-        const id = this.props.match.params.id;
-        //console.log("compononent Did Mount");
-        axios.get(`https://api.spotify.com/v1/artists/${id}`).then(response => {
-            console.log(response);
-            this.setState({artist: response.data});
-        });
-        console.log("get data");
-    }
+  componentDidMount() {
+    const id = this.props.match.params.id;
+    axios.get(`https://api.spotify.com/v1/artists/${id}`).then(response => {
+      this.setState({artist: response.data});
+    });
+  }
 
-    render() {
-        console.log(this);
-        return (
-            <div>
-                <TrackList tracks={this.state.tracks} playTrack={this.props.playTrack}/>
-            </div>
-        );
+  render() {
+    if (this.state.artist == null) {
+      return (
+        <div>
+        <h1>Loading</h1>
+        </div>
+      );
     }
+    return (
+      <div>
+      {
+        <TrackList id={this.props.match.params.id} type={"artist"} playTrack={this.props.playTrack}/>
+      }
+      </div>
+    );
+  }
 }
