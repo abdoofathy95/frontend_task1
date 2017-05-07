@@ -10,7 +10,7 @@ import SearchArtists from './SearchArtists'
 import SingleArtist from './SingleArtist'
 import SearchAlbums from './SearchAlbums'
 import SingleAlbum from './SingleAlbum'
-import Player from './Player'
+import Player from './components/Player'
 
 
 /*let counter = 0;

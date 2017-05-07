@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import TrackList from './TrackList';
+import TrackList from './components/TrackList';
 
 export default class SingleArtist extends React.Component {
 

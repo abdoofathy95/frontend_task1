@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import './tracks.css';
+import './css/TrackList.css';
 
 class TrackList extends Component {
   constructor(props) {
