@@ -71,14 +71,14 @@ export default class Player extends React.Component {
               <i className={`${this.state.playing ? 'fa fa-pause' : 'fa fa-play'} player-controls__button`} aria-hidden="true" onClick={this.togglePlay}></i>
             </div>
             <div className="player-controls__progress">
-              <div className="progress__time progress__time--start">0</div>
+              <div className="progress__time progress__time--start">{Math.floor(this.state.played * 30)}</div>
               <div className="progress__time progress__time--end">30</div>
               <div className="progress-bar">
                 <div className="progress-bar__status" style={{width: `${this.state.played * 100}%`}}></div>
               </div>
             </div>
           </div>
-          <ReactPlayer onProgress={this.handleProgress} url={this.props.current.preview_url} hidden playing={this.state.playing} onEnded={this.togglePlay}/>
+          <ReactPlayer progressFrequency="100" onProgress={this.handleProgress} url={this.props.current.preview_url} hidden playing={this.state.playing} onEnded={this.togglePlay}/>
         </div>
       </div>
     );
