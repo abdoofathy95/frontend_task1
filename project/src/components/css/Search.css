@@ -1,0 +1,19 @@
+.main_container {
+  padding: 30px;
+}
+
+.main_container .title {
+  font-weight: 700;
+}
+
+.main_container .search_input {
+  margin-bottom: 20px;
+}
+
+.main_container .search_input input {
+  border-radius: 25px;
+  border: none;
+  padding: 10px;
+  width: 300px;
+  outline-width: 0;
+}

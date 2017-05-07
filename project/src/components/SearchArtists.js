@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import ArtistList from './ArtistList'
+import './css/Search.css'
 
 export default class SearchArtists extends React.Component {
 
@@ -16,31 +17,27 @@ export default class SearchArtists extends React.Component {
   searchVideos(event) {
     event.preventDefault();
     let searchKeyword = this.refs.keyword.value;
-    if(searchKeyword.length>0){
-      axios.get("https://api.spotify.com/v1/search?type=artist&q="+searchKeyword).then(response => {
+    if (searchKeyword.length > 0) {
+      axios.get("https://api.spotify.com/v1/search?type=artist&q=" + searchKeyword).then(response => {
         this.setState({artists: response.data.artists.items});
       });
-    }else{
+    } else {
       alert("Please insert a name first");
     }
 
   }
 
-  componentDidMount() {
-  }
-
   render() {
     return (
-      <div className="main-wrap">
-        <h1 className="main-title">
+      <div className="main_container">
+        <h1 className="title">
           Search for artists
-          <form
-            className="search-form"
-            onSubmit={this.searchVideos}>
-            <input placeholder="Search..." ref="keyword" type="text"/>
-          </form>
         </h1>
+        <form className="search_input" onSubmit={this.searchVideos}>
+          <input placeholder="Search..." ref="keyword" type="text"/>
+        </form>
         <ArtistList artists={this.state.artists}/>
+
       </div>
     );
   }

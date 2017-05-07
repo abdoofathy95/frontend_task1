@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import ArtistList from './ArtistList'
+import './css/Search.css'
 
 export default class Home extends React.Component {
 
@@ -19,8 +20,8 @@ export default class Home extends React.Component {
 
   render() {
     return (
-        <div className="main-wrap">
-          <h1 className="main-title">
+        <div className="main_container">
+          <h1 className="title">
             Top Artists
           </h1>
           <ArtistList artists={this.state.artists}/>

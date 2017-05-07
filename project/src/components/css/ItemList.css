@@ -1,0 +1,30 @@
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -1em 0 0 -1em;
+}
+
+.item_image {
+  margin-bottom: 10px;
+  position: relative;
+  padding-top: 100%;
+  background-position: 50%;
+  background-color: #303030;
+  background-size: cover;
+  box-shadow: 0 0 25px rgba(0, 0, 0, .2);
+}
+
+.item {
+  width: 25%;
+  padding: 1em 0 0 1em;
+  margin-bottom: 35px;
+}
+
+.left_item {
+  text-align: left;
+}
+
+.center_item {
+  font-weight: 600;
+  text-align: center;
+}
