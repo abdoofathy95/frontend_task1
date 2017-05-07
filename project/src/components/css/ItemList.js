@@ -21,7 +21,12 @@ export default StyleSheet.create({
         "backgroundPosition": "50%",
         "backgroundColor": "#303030",
         "backgroundSize": "cover",
+        "transition": "opacity 0.2s ease-in-out",
+        "opacity": 1,
         "boxShadow": "0 0 25px rgba(0, 0, 0, .2)"
+    },
+    "item_image:hover": {
+        "opacity": 0.3
     },
     "item": {
         "width": "25%",
@@ -29,6 +34,7 @@ export default StyleSheet.create({
         "paddingRight": 0,
         "paddingBottom": 0,
         "paddingLeft": 1,
+        "opacity": 1,
         "marginBottom": 35
     },
     "left_item": {

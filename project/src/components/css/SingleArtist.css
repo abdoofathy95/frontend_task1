@@ -1,0 +1,85 @@
+.artist_header {
+  flex-direction: column;
+  display: flex;
+}
+
+.artist_background_image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 25%;
+  padding-top: 35%;
+  position: relative;
+}
+
+.details_container {
+  flex: 4;
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+}
+
+.details_container .followers {
+  margin-bottom: 0;
+  padding: 0 10px;
+}
+
+.details_container .title {
+  font-family: helvetica neue;
+  font-size: 60px;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.button {
+  background-color: #2ebd59;
+  color: #fff;
+  border-radius: 30px;
+  padding: 10px 20px;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-right: 10px;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.button:hover {
+  background-color: #219042;
+  color: white;
+}
+
+.button_transparent {
+  color: #fff;
+  border-radius: 30px;
+  padding: 10px 20px;
+  border: 1px solid #fff;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+  transition: background-color 0.5s ease-in-out;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.button_transparent:hover {
+  background-color: #191919;
+  color: white;
+}
+
+.artist_content {
+  padding: 40px;
+}
+
+.section_title {
+  font-weight: 700;
+}
+
+.aritst_albums {
+  background-color: rgba(0, 0, 0, .3);
+  padding: 40px;
+}

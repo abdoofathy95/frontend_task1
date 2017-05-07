@@ -11,14 +11,24 @@
   background-position: 50%;
   background-color: #303030;
   background-size: cover;
+  transition: opacity 0.2s ease-in-out;
+  opacity: 1.0;
   box-shadow: 0 0 25px rgba(0, 0, 0, .2);
+}
+
+.item_image:hover {
+  opacity: 0.3;
 }
 
 .item {
   width: 25%;
   padding: 1em 0 0 1em;
+  opacity: 1.0;
   margin-bottom: 35px;
+
 }
+
+
 
 .left_item {
   text-align: left;

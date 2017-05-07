@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {BrowserRouter, Route, Link} from 'react-router-dom';
 import logo from '../../public/logo.svg';
-import './css/AppBack.css';
+import './css/App.css';
 import '../lib/font-awesome-4.7.0/css/font-awesome.css';
 import Home from './Home'
 import SearchArtists from './SearchArtists'
