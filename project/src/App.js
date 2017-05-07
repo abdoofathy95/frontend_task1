@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-var FontAwesome = require('react-fontawesome');
 import {BrowserRouter, Route, Link} from 'react-router-dom';
 import logo from './logo.svg';
 import './mainToBeChanged.css';
@@ -11,17 +10,6 @@ import SingleArtist from './SingleArtist'
 import SearchAlbums from './SearchAlbums'
 import SingleAlbum from './SingleAlbum'
 import Player from './components/Player'
-
-
-/*let counter = 0;
-setInterval(function(){
-  console.log(counter);
-  counter++;
-})*/
-
-/*axios.get(API_URL, {params: params}).then(response => {
-    this.setState({stateVar: response.data});
-});*/
 
 export default class App extends Component {
 
@@ -85,7 +73,7 @@ function Navigation(props) {
                   </ul>
                 </div>
                 <a className="sidebar__user">
-                  <i className="fa fa-user-o" aria-hidden="true"></i> Ahmed Wagdi
+                  <i className="fa fa-user-o" aria-hidden="true"></i> User
                 </a>
               </nav>
               <div className="main-content">
@@ -93,7 +81,8 @@ function Navigation(props) {
                   <Route path="/artists" component={SearchArtists}/>
                   <Route path="/artist/:id?" render={(routeProps) => <SingleArtist playTrack={props.playTrack} trackId={props.trackId} { ... routeProps }/>}/>
                   <Route path="/albums" component={SearchAlbums}/>
-                  <Route path="/album/:id?" render={SingleAlbum}/>
+                  
+                  <Route path="/album/:id?" render={(routeProps) => <SingleAlbum playTrack={props.playTrack} trackId={props.trackId} { ... routeProps }/>}/>
               </div>
             </div>
           </div>

@@ -27,14 +27,30 @@ export default class Player extends React.Component {
       return null;
     }
 
+    if (!this.props.current.preview_url) {
+      return (
+        <div className="player">
+          <div className="player-content">
+            <div className="player-track">
+              <div className="player-content__details">
+                <h6>Track is not playable</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
     if (this.state.track === null || this.state.track != this.props.current.id) {
       this.state.playing = true;
       this.state.played = 0;
       this.state.track = this.props.current.id;
+
+      console.log(this.props.current);
     }
 
     let image = "";
-    if (this.props.current.album.images) {
+    if (this.props.current.album && this.props.current.album.images) {
       image = this.props.current.album.images[0].url;
     }
 

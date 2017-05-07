@@ -1,13 +1,13 @@
 import React from 'react';
 import axios from 'axios';
-import ArtistList from './ArtistList'
+import AlbumList from './AlbumList'
 
 export default class SearchAlbums extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      artists: []
+      albums: []
     }
 
     this.searchVideos = this.searchVideos.bind(this);
@@ -18,8 +18,7 @@ export default class SearchAlbums extends React.Component {
     let searchKeyword = this.refs.keyword.value;
     if(searchKeyword.length>0){
       axios.get("https://api.spotify.com/v1/search?type=album&q="+searchKeyword).then(response => {
-        console.log(response);
-        this.setState({artists: response.data.albums.items});
+        this.setState({albums: response.data.albums.items});
       });
     }else{
       alert("Please insert a name first");
@@ -28,9 +27,6 @@ export default class SearchAlbums extends React.Component {
   }
 
   componentDidMount() {
-    console.log("component Did Mount");
-
-    console.log("get data");
   }
 
   render() {
@@ -44,7 +40,7 @@ export default class SearchAlbums extends React.Component {
             <input placeholder="Search..." ref="keyword" type="text"/>
           </form>
         </h1>
-        <ArtistList artists={this.state.artists}/>
+        <AlbumList albums={this.state.albums}/>
       </div>
     );
   }

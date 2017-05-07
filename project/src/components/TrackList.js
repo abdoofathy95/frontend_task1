@@ -26,7 +26,11 @@ class TrackList extends Component {
       break;
     }
     axios.get(url).then(response => {
-      this.setState({tracks: response.data.tracks});
+      if (response.data.items) {
+        this.setState({tracks: response.data.items});
+      } else {
+        this.setState({tracks: response.data.tracks});
+      }
     }).catch(error => {
       this.setState({error: true});
     });
@@ -45,16 +49,25 @@ class TrackList extends Component {
     if (tracks == null) {
       return (
         <div>
-        <h1>Loading</h1>
+        <h4>Loading tracks</h4>
         </div>
       );
     }
+
+    if (tracks.length == 0) {
+      return (
+        <div>
+        <h4>No tracks to show</h4>
+        </div>
+      );
+    }
+
     return(
       <div>
         <table className="track-list">
           <tbody>
           {tracks.map((track,i) => (
-            <tr className="track-list__item" key={i} style={{color: `${this.props.trackId == track.id ? 'green' : 'white'}`, backgroundColor: `${this.props.trackId == track.id ? 'black' : 'transparent'}`}} onClick={() => this.props.playTrack(tracks, i)}>
+            <tr className="track-list__item" key={i} style={{color: `${this.props.trackId == track.id ? 'green' : 'white'}`}} onClick={() => this.props.playTrack(tracks, i)}>
               <td className="track-list__cell">{`${i + 1}.`}</td>
               <td className="track-list__cell">{ track.name }</td>
               <td className="track-list__cell">{ track.duration_ms }</td>

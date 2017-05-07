@@ -13,7 +13,6 @@ export default class Home extends React.Component {
 
   componentDidMount() {
     axios.get("https://api.spotify.com/v1/search?type=artist&q=amr").then(response => {
-      console.log(response);
       this.setState({artists: response.data.artists.items});
     });
   }

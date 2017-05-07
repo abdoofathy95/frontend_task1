@@ -18,7 +18,6 @@ export default class SearchArtists extends React.Component {
     let searchKeyword = this.refs.keyword.value;
     if(searchKeyword.length>0){
       axios.get("https://api.spotify.com/v1/search?type=artist&q="+searchKeyword).then(response => {
-        console.log(response);
         this.setState({artists: response.data.artists.items});
       });
     }else{
@@ -28,9 +27,6 @@ export default class SearchArtists extends React.Component {
   }
 
   componentDidMount() {
-    console.log("component Did Mount");
-
-    console.log("get data");
   }
 
   render() {
