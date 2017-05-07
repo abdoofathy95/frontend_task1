@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
-import TrackList from './components/TrackList';
+import TrackList from './TrackList';
 
 export default class SingleAlbum extends React.Component {
 
@@ -20,8 +20,6 @@ export default class SingleAlbum extends React.Component {
     }
 
     render() {
-        //<TrackList tracks={this.state.tracks} playTrack={this.props.playTrack}/>
-        //{this.state.album.artists!=null && this.state.album.artists.length>0?this.state.album.artists[0].id:''}
         return (
             <div className="main-wrap album">
               <div className="album__side">

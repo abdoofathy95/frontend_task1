@@ -1,15 +1,14 @@
 import React, {Component} from 'react';
 import {BrowserRouter, Route, Link} from 'react-router-dom';
-import logo from './logo.svg';
-import './mainToBeChanged.css';
-import './lib/font-awesome-4.7.0/css/font-awesome.css';
-
+import logo from '../../public/logo.svg';
+import './css/mainToBeChanged.css';
+import '../lib/font-awesome-4.7.0/css/font-awesome.css';
 import Home from './Home'
 import SearchArtists from './SearchArtists'
 import SingleArtist from './SingleArtist'
 import SearchAlbums from './SearchAlbums'
 import SingleAlbum from './SingleAlbum'
-import Player from './components/Player'
+import Player from './Player'
 
 export default class App extends Component {
 
@@ -81,7 +80,7 @@ function Navigation(props) {
                   <Route path="/artists" component={SearchArtists}/>
                   <Route path="/artist/:id?" render={(routeProps) => <SingleArtist playTrack={props.playTrack} trackId={props.trackId} { ... routeProps }/>}/>
                   <Route path="/albums" component={SearchAlbums}/>
-                  
+
                   <Route path="/album/:id?" render={(routeProps) => <SingleAlbum playTrack={props.playTrack} trackId={props.trackId} { ... routeProps }/>}/>
               </div>
             </div>

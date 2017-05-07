@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import AlbumList from './AlbumList';
-import TrackList from './components/TrackList';
+import TrackList from './TrackList';
 
 export default class SingleArtist extends React.Component {
 
@@ -24,7 +24,6 @@ export default class SingleArtist extends React.Component {
     }
 
     render() {
-        //<TrackList tracks={this.state.tracks} playTrack={this.props.playTrack}/>
         return (
             <div>
               <div className="artist">
