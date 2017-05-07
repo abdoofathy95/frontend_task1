@@ -29,7 +29,7 @@ export default class SingleArtist extends React.Component {
     return (
       <div>
       {
-        <TrackList id={this.props.match.params.id} type={"artist"} playTrack={this.props.playTrack}/>
+        <TrackList id={this.props.match.params.id} type={"artist"} trackId={this.props.trackId} playTrack={this.props.playTrack}/>
       }
       </div>
     );

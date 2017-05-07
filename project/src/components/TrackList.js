@@ -49,13 +49,12 @@ class TrackList extends Component {
         </div>
       );
     }
-
     return(
       <div>
         <table className="track-list">
           <tbody>
           {tracks.map((track,i) => (
-            <tr className="track-list__item" key={i} onClick={() => this.props.playTrack(tracks, i)}>
+            <tr className="track-list__item" key={i} style={{color: `${this.props.trackId == track.id ? 'green' : 'white'}`, backgroundColor: `${this.props.trackId == track.id ? 'black' : 'transparent'}`}} onClick={() => this.props.playTrack(tracks, i)}>
               <td className="track-list__cell">{`${i + 1}.`}</td>
               <td className="track-list__cell">{ track.name }</td>
               <td className="track-list__cell">{ track.duration_ms }</td>

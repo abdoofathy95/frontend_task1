@@ -48,10 +48,14 @@ export default class App extends Component {
     }
 
     render() {
+      let id = "";
+      if (this.state.queue[this.state.currentIndex]) {
+        id = this.state.queue[this.state.currentIndex].id;
+      }
         return (
             <BrowserRouter>
                 <div>
-                    <Navigation playTrack={ this.playTrack }/>
+                    <Navigation playTrack={ this.playTrack } trackId={id}/>
                     <Player nextTrack={this.nextTrack} current={this.state.queue[this.state.currentIndex]}/>
                 </div>
             </BrowserRouter>
@@ -87,7 +91,7 @@ function Navigation(props) {
               <div className="main-content">
                   <Route exact path="/" component={Home}/>
                   <Route path="/artists" component={SearchArtists}/>
-                  <Route path="/artist/:id?" render={(routeProps) => <SingleArtist playTrack={props.playTrack} { ... routeProps }/>}/>
+                  <Route path="/artist/:id?" render={(routeProps) => <SingleArtist playTrack={props.playTrack} trackId={props.trackId} { ... routeProps }/>}/>
                   <Route path="/albums" component={SearchAlbums}/>
                   <Route path="/album/:id?" render={SingleAlbum}/>
               </div>
